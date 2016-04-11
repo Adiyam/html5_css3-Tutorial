@@ -1,0 +1,225 @@
+// ---------------------Variable Styles ------------------- //
+$grey:  #414148;
+$pink:  #ea48eb;
+$white: #FFFFFF;
+
+@mixin bg_img($url, $size, $position) {
+	background-image: url($url);
+	background-size: $size;
+	background-position: $position;
+}
+
+// ---------------------General Styles ------------------- //
+
+* {
+	box-sizing: border-box;
+}
+
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	-webkit-font-smoothing: antialiased; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Merienda One', Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.wrapper {
+	width: 1000px;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+// ---------------------Banner Styles ------------------- //
+
+.banner {
+	padding: 5em 0;
+	.logo {
+		float: left;
+		&:hover {
+			text-shadow: 3px 3px 3px #000;
+		}
+	}
+	h1 {
+		float: right;
+		color: $grey;
+		font-size: 5em;
+		text-align: right;
+		display: inline;
+		margin: 0;
+		&:hover {
+			color: $pink;
+			text-shadow: 3px 3px 3px #000;
+		}
+	}
+}
+
+.logo {
+	background: $pink;
+	height: 75px;
+	width: 75px;
+	border-radius: 100%;
+	line-height: 75px;
+	text-align: center;
+	font-size: 1.1em;
+	font-family: 'Merienda One', Helvetica, sans-serif;
+	color: $white;
+}
+
+// ---------------------Work Styles ------------------- //
+
+.row {
+	width: 100%;
+	margin-bottom: 2em;
+	&:before, &:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+.work {
+	background: $grey;
+	padding: 5em 0;
+	.card {
+		background: $white;
+		height: 450px;
+		border-radius: .35em;
+		display: table;
+		background-repeat: no-repeat;
+	}
+	.card_full {
+		width: 100%;
+	}
+	.card_half {
+		width: 48.5%;
+		float: left;
+	}
+	.card_third {
+		width: 75%;
+		float: left;
+	}
+	.left {
+		margin-right: 1.5%;
+	}
+	.right {
+		margin-left: 1.5%;
+	}
+	.tall {
+		height: 750px;
+	}
+	.card_1 {
+		@include bg_img('../images/design_resources.svg', 80%, 280px 20px);
+	}
+	.card_2 {
+		@include bg_img('../images/design_developers.svg', 120%, -100px 80px);
+	}
+	.card_3 {
+		@include bg_img('../images/splash.svg', 120%, -10px 80px);
+	}
+	.card_4 {
+		@include bg_img('../images/design_resources.svg', 80%, 280px 20px);
+	}
+	.card_inner {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 1.5em 12%;
+		height: 100%;
+		color: $white;
+		p {
+			font-weight: 700;
+			font-size: 1.2em;
+			text-transform: uppercase;
+		}
+		h2 {
+			font-size: 3.5em;
+			margin: 0;
+		}
+	}
+	.pink, .green, .purple, .blue {
+		border-radius: .35em;
+	}
+	.pink {
+		background: rgba(230, 56, 222, .6);
+	}
+	.purple {
+		background: rgba(145, 89, 219, .6);
+	}
+	.green {
+		background: rgba(80, 218, 93, .6);
+	}
+	.blue {
+		background: rgba(131, 226, 245, .6);
+	}
+	.view_more {
+		width: 25%;
+		height: 450px;
+		padding-left: 3em;
+		float: left;
+		p {
+			font-size: 1.2em;
+			font-weight: 700;
+			line-height: 450px;
+			color: rgba(146, 146, 171, 1);
+			margin: 0;
+			font-family: 'Merienda One', Helvetica, sans-serif;
+		}
+		a {
+			text-decoration: none;
+			&:hover {
+				p {
+					color: $pink;
+				}
+			}
+		}
+	}
+}
+
+// ---------------------Footer Styles ------------------- //
+
+footer {
+	padding: 3em 0;
+	.logo {
+		float: left;
+		margin: 0;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-top: 1em;
+		li {
+			display: inline;
+			float: left;
+			margin-left: 4em;
+			.title {
+				text-transform: uppercase;
+				font-weight: 700;
+				font-size: .75em;
+				display: block;
+				padding-bottom: .5em;
+			}
+			.links {
+				font-family: 'Merienda One', Helvetica, sans-serif;
+				font-size: 1.75em;
+				a {
+					text-decoration: none;
+					color: $grey;
+					&:hover {
+						color: $pink;
+					}
+				}
+			}
+		}
+	}
+}
